@@ -1,0 +1,24 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.example-card {
+    max-width: 400px;
+    transition: transform .2s; 
+  }
+
+  .example-card:hover {
+    max-width: 420px;
+    border: 1px solid rgb(215, 213, 213);
+   /*     box-shadow: 15px 15px 10px rgb(201, 187, 187);    x-y-z=opacity color-name */
+     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

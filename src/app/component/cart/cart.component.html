@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div class="container mt-4 mb-4">
+        <div class="card">
+            <h5 class="card-header">My Cart</h5>
+            <div class="card-body">
+                <div class='Header'>
+                    <h4 class='Heading'>Shopping Cart </h4>
+                    <h5 class='Action' (click)="emptycart()">Remove all</h5>
+                </div>
+
+                <ng-container *ngIf="product.length  != 0">
+                    <ng-container *ngFor="let item of product let i=index"> 
+
+                        <div class="row border-bottom">
+                            <div class="col-sm-2 text-center p-1">
+                                <img src='{{ item.image }}' style="height:120px; width: 100px; " />
+                            </div>
+                            <div class="col-sm-7 text-start p-1">
+                                <h3 class='title'>{{ item.title }}</h3>
+                                <p class='text-secondary'><span>{{ item.description }}</span></p>
+                            </div>
+                            <div class="col sm-1 text-center" style="display: flex; align-items: center;">
+                               
+                                    <div class='btn_round'>+</div>
+                                    <div class='count'>1</div>
+                                    <div class='btn_round'>-</div>
+                                
+                            </div>
+                            <div class="col-sm-1 text-start ">
+                                    
+                                        <div class='amount'>INR {{ item.price }}</div>
+                                        <div class='remove' ><u><a (click)="removeItem(item)">Remove</a></u></div>
+                                    
+                            </div>
+                           
+                        </div>
+                       
+
+                       
+                       
+                    </ng-container>
+
+                    
+                
+           
+               
+                <div class='checkout'>
+                <div class='total'>
+                <div>
+                <div class='Subtotal'>Sub-Total</div>
+                <div class='items'>{{ totalItem }} Items</div>
+                </div>
+                <div class='total-amount' >INR {{ grandtotal }}</div>
+                </div>
+                <button class='button checkout_btn'>Checkout</button>
+                </div> 
+            </ng-container>
+
+                <ng-container *ngIf="product.length == 0">
+                 <div class='Cart-Itemss text-center'>
+                    <h1 class='title'>Your Cart is Empty !</h1>
+                    <h3 class='subtitle mt-5'>Add Item to Cart</h3>
+                    <button type="button " routerLink="/card" class="btn btn-outline-primary text-center mt-5">Shop Now</button>
+                </div>  
+                </ng-container>
+
+            
+            </div>
+          </div>
+    </div>
+   
+
+</body>
+</html>
+

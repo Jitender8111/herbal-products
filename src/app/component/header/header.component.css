@@ -1,0 +1,19 @@
+.navbar-nav li a{
+    
+    color: white;
+    font-size: 16px;
+}
+.navbar-nav li a:hover{
+    
+    color: rgb(216, 213, 213);
+    font-size: 17px;
+}
+.dropdown-menu li a{
+    color: black;
+}
+.dropdown-menu li a:hover{
+    color: goldenrod;
+}
+.right-icon{
+   margin-left: 40px;
+}
